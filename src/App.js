@@ -1,12 +1,25 @@
+import "./App.css";
+import React, { useState } from "react";
+import { DayPicker } from "react-day-picker";
+import { format } from "date-fns";
+import "react-day-picker/dist/style.css";
 
-import './App.css';
-import Calendar from './components/Calendar';
-// import MyComponent from './components/MyComponent';
+import NotesList from "./components/NotesList";
 
 function App() {
+  const [selectedDay, setSelectedDay] = useState(null);
+
+  const handleDayClick = (day) => {
+    setSelectedDay(day);
+  };
+
   return (
-    <div className="App">
-      <Calendar/>
+    <div>
+      <h2>Calendar with notes</h2>
+
+      <DayPicker selected={selectedDay} onDayClick={handleDayClick} />
+
+      {selectedDay && <NotesList selectedDay={format(selectedDay, "PP")} />}
     </div>
   );
 }
