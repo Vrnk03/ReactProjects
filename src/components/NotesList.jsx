@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import NoteItem from "./NoteItem";
+import AddModal from "./AddModal";
 
 function NotesList(props) {
   const notes = [
@@ -23,7 +24,10 @@ function NotesList(props) {
     },
   ];
 
-  const handleAddClick = () => {};
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenModal = () => setIsOpen(true);
+  const handleCloseModal = () => setIsOpen(false);
 
   return (
     <div style={{ backgroundColor: "#eee" }}>
@@ -37,7 +41,9 @@ function NotesList(props) {
         <p>You haven't any notes</p>
       )}
 
-      <button>Add notes</button>
+      <button onClick={handleOpenModal}>Add notes</button>
+
+      {isOpen && <AddModal open={isOpen} close={handleCloseModal} />}
     </div>
   );
 }
