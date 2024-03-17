@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-// import MyComponent from './components/MyComponent';
+import Weather from './components/Weather';
 
 function App() {
+
+  const apiKey = '198119aab90f44c994b161419241403';
+
   return (
     <div className="App">
-      
+      <Weather apiKey={apiKey}/>
     </div>
   );
 }
