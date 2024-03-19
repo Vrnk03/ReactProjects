@@ -1,27 +1,3 @@
-.open-modal-btn {
-  background: #fff;
-  padding: 18px 25px;
-  border-radius: 20px;
-  font-weight: 500;
-  border: 0;
-  outline: none;
-  font-size: 22px;
-  cursor: pointer;
-  line-height: 23px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.1s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    transform: translateY(0);
-  }
-}
-
 .overlay {
   position: absolute;
   left: 0;
@@ -36,7 +12,7 @@
   background-color: #fff;
   width: 70%;
   max-width: 500px;
-  max-height: 300px;
+  max-height: 500px;
   padding: 40px 30px;
   border-radius: 10px;
   position: absolute;
@@ -45,11 +21,6 @@
   transform: translate(-50%, -50%);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease-in-out;
-
-  img {
-    border-radius: 5px;
-    width: 100%;
-  }
 
   svg {
     position: absolute;
@@ -64,27 +35,25 @@
       opacity: 1;
     }
   }
-}
 
-.overlay.animated {
-  opacity: 0;
-  visibility: hidden;
+  form {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-  .modal {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(-50%, -30%);
-    transition-delay: 0.2s;
-  }
-
-  &.show {
-    opacity: 1;
-    visibility: visible;
-
-    .modal {
-      opacity: 1;
-      visibility: visible;
-      transform: translate(-50%, -50%);
+    textarea {
+      width: 440px;
+      height: 110px;
+    }
+    .btn {
+      cursor: pointer;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 10px;
+      background-color: #111;
     }
   }
 }

@@ -37,7 +37,7 @@ function AddModal(props) {
               onChange={(e) => setNote(e.target.value)}
               placeholder="Enter your note"
             ></textarea>
-            <input type="submit" value="Add note" />
+            <input className="btn" type="submit" value="Add note" />
           </form>
         </div>
       </div>

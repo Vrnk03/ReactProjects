@@ -13,12 +13,15 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="App">
       <h2>Calendar with notes</h2>
 
-      <DayPicker selected={selectedDay} onDayClick={handleDayClick} />
-
-      {selectedDay && <NotesList selectedDay={selectedDay} />}
+      <div className="content">
+        <div className="calendar">
+          <DayPicker selected={selectedDay} onDayClick={handleDayClick} />
+        </div>
+        {selectedDay && <NotesList selectedDay={selectedDay} />}
+      </div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import "../styles/noteList.css";
 import React, { useState } from "react";
 import NoteItem from "./NoteItem";
 import AddModal from "./AddModal";
@@ -42,7 +43,7 @@ function NotesList(props) {
   };
 
   return (
-    <div style={{ backgroundColor: "#eee" }}>
+    <div className="notesList">
       <h2>{format(props.selectedDay, "PP")}</h2>
 
       {notes.some(
@@ -58,7 +59,9 @@ function NotesList(props) {
         <p>You haven't any notes</p>
       )}
 
-      <button onClick={handleOpenModal}>Add notes</button>
+      <button className="btn" onClick={handleOpenModal}>
+        Add notes
+      </button>
 
       {isOpen && (
         <AddModal open={isOpen} close={handleCloseModal} addNote={addNote} />

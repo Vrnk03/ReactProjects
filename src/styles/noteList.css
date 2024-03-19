@@ -1,0 +1,24 @@
+.notesList {
+  width: 370px;
+  height: 312px;
+  overflow-y: auto;
+  padding: 20px 30px;
+  background-color: #efeded;
+  border-radius: 15px;
+
+  h2 {
+    margin: 0px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: solid 2px #111;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #111;
+}
