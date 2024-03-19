@@ -4,28 +4,42 @@ import AddModal from "./AddModal";
 import { format } from "date-fns";
 
 function NotesList(props) {
-  const notes = [
+  const [notes, setNotes] = useState([
     {
-      id: 1,
       date: new Date(2024, 2, 8, 18, 0),
       text: "Go in restaran",
     },
     {
-      id: 2,
       date: new Date(2024, 2, 8, 21, 0),
       text: "Go in clab",
     },
     {
-      id: 3,
       date: new Date(2024, 2, 10, 10, 0),
       text: "Go in shop",
     },
-  ];
+  ]);
 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => setIsOpen(true);
   const handleCloseModal = () => setIsOpen(false);
+
+  const addNote = (hour, min, nodeText) => {
+    setNotes((prevNotes) => [
+      ...prevNotes,
+      {
+        date: new Date(
+          props.selectedDay.getFullYear(),
+          props.selectedDay.getMonth(),
+          props.selectedDay.getDate(),
+          hour,
+          min
+        ),
+        text: nodeText,
+      },
+    ]);
+    setIsOpen(false);
+  };
 
   return (
     <div style={{ backgroundColor: "#eee" }}>
@@ -39,14 +53,16 @@ function NotesList(props) {
             (item) =>
               item.date.toDateString() === props.selectedDay.toDateString()
           )
-          .map((item) => <NoteItem key={item.id} values={item} />)
+          .map((item, index) => <NoteItem key={index} values={item} />)
       ) : (
         <p>You haven't any notes</p>
       )}
 
       <button onClick={handleOpenModal}>Add notes</button>
 
-      {isOpen && <AddModal open={isOpen} close={handleCloseModal} />}
+      {isOpen && (
+        <AddModal open={isOpen} close={handleCloseModal} addNote={addNote} />
+      )}
     </div>
   );
 }
