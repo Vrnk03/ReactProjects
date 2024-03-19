@@ -1,26 +1,24 @@
 import React, { useState } from "react";
 import NoteItem from "./NoteItem";
 import AddModal from "./AddModal";
+import { format } from "date-fns";
 
 function NotesList(props) {
   const notes = [
     {
       id: 1,
-      date: "Mar 8, 2024",
+      date: new Date(2024, 2, 8, 18, 0),
       text: "Go in restaran",
-      time: "18:00",
     },
     {
       id: 2,
-      date: "Mar 8, 2024",
+      date: new Date(2024, 2, 8, 21, 0),
       text: "Go in clab",
-      time: "21:00",
     },
     {
       id: 3,
-      date: "Mar 10, 2024",
+      date: new Date(2024, 2, 10, 10, 0),
       text: "Go in shop",
-      time: "10:00",
     },
   ];
 
@@ -31,11 +29,16 @@ function NotesList(props) {
 
   return (
     <div style={{ backgroundColor: "#eee" }}>
-      <h2>{props.selectedDay}</h2>
+      <h2>{format(props.selectedDay, "PP")}</h2>
 
-      {notes.some((item) => item.date === props.selectedDay) ? (
+      {notes.some(
+        (item) => item.date.toDateString() === props.selectedDay.toDateString()
+      ) ? (
         notes
-          .filter((item) => item.date === props.selectedDay)
+          .filter(
+            (item) =>
+              item.date.toDateString() === props.selectedDay.toDateString()
+          )
           .map((item) => <NoteItem key={item.id} values={item} />)
       ) : (
         <p>You haven't any notes</p>

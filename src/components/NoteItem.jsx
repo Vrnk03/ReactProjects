@@ -4,7 +4,8 @@ function NoteItem(props) {
   return (
     <div>
       <p>
-        {props.values.time} {props.values.text}
+        {props.values.date.toString().match(/\b\d{2}:\d{2}\b/)}{" "}
+        {props.values.text}
       </p>
     </div>
   );
