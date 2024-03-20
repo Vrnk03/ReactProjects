@@ -7,15 +7,15 @@ import { format } from "date-fns";
 function NotesList(props) {
   const [notes, setNotes] = useState([
     {
-      date: new Date(2024, 2, 8, 18, 0),
+      date: new Date(2024, 3, 8, 18, 0),
       text: "Go in restaran",
     },
     {
-      date: new Date(2024, 2, 8, 21, 0),
+      date: new Date(2024, 3, 8, 21, 0),
       text: "Go in clab",
     },
     {
-      date: new Date(2024, 2, 10, 10, 0),
+      date: new Date(2024, 3, 10, 10, 0),
       text: "Go in shop",
     },
   ]);
