@@ -1,14 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import Weather from './components/Weather';
+import "./App.css";
+import Weather from "./components/Weather";
 
 function App() {
-
-  const apiKey = '198119aab90f44c994b161419241403';
+  const apiKey = "198119aab90f44c994b161419241403";
 
   return (
     <div className="App">
-      <Weather apiKey={apiKey}/>
+      <Weather apiKey={apiKey} />
     </div>
   );
 }
