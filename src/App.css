@@ -6,12 +6,12 @@
 
 .content {
   display: flex;
-  width: 50%;
+  width: 55%;
   justify-content: space-between;
 }
 
 .calendar {
-  width: 312px;
+  width: 370px;
   background-color: #3690ff5d;
   border-radius: 15px;
 }
