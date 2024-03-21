@@ -1,0 +1,19 @@
+.result {
+  text-align: center;
+}
+
+button {
+  font-weight: bold;
+  border-radius: 30px;
+  border: 0;
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: #111;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 0;
+}

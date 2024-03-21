@@ -1,0 +1,66 @@
+.progress {
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(232, 232, 232);
+  margin-bottom: 25px;
+}
+
+.progress__inner {
+  height: 100%;
+  border-radius: 5px;
+  width: 80%;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 231, 48, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  transition: width 0.3s ease-in-out;
+}
+
+.progress::before,
+.progress::after {
+  content: "";
+  display: block;
+  height: 50px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.progress::before {
+  width: 95%;
+  bottom: -10px;
+  z-index: 0;
+}
+
+.progress::after {
+  width: 90%;
+  bottom: -20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border-color 0.1s ease-in-out;
+}
+
+ul li:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+}
